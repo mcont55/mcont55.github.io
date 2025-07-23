@@ -10,7 +10,7 @@
     .typed-cursor {
       font-weight: 300;
       font-size: 1.2rem;
-      color: #4a3aff;
+      color: #3aa76d;
       animation: blink 0.7s infinite;
     }
     @keyframes blink {
@@ -91,6 +91,8 @@
     </p>
   </footer>
 
+  <button id="scrollToTopBtn" title="Scroll to Top">↑</button>
+
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     new Typed('#typed', {
@@ -100,6 +102,14 @@
       backDelay: 1800,
       startDelay: 200,
       loop: true
+    });
+
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
   <script src="script.js"></script>
