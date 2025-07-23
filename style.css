@@ -1,8 +1,8 @@
 /* General */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #fefefe;
-  color: #333;
+  background-color: #f8f9ff;
+  color: #2b2b2b;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -13,6 +13,7 @@ body {
 h1, h2, h3 {
   font-weight: 600;
   text-align: center;
+  color: #4a3aff;
 }
 
 section {
@@ -27,19 +28,19 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background: #ffffffee;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
 }
 
 .nav-left {
   font-weight: 700;
   font-size: 1.2rem;
-  color: #6c63ff;
+  color: #4a3aff;
 }
 
 .nav-right {
@@ -52,6 +53,7 @@ nav {
   text-decoration: none;
   color: #333;
   position: relative;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
@@ -62,12 +64,12 @@ nav {
   height: 2px;
   left: 0;
   bottom: -2px;
-  background-color: #6c63ff;
+  background-color: #4a3aff;
   transition: width 0.3s ease;
 }
 
 .nav-right a:hover {
-  color: #6c63ff;
+  color: #4a3aff;
 }
 
 .nav-right a:hover::after {
@@ -85,8 +87,9 @@ nav {
   height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   margin-bottom: 1rem;
+  border: 3px solid #4a3aff44;
 }
 
 .profile-pic.large {
@@ -96,14 +99,14 @@ nav {
 
 .tagline {
   font-size: 1.1rem;
-  color: #666;
+  color: #444;
   margin: 0.2rem 0;
 }
 
 .tagline.highlight {
-  color: #6c63ff;
+  color: #4a3aff;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
 /* Cards */
@@ -120,7 +123,7 @@ nav {
 .exp-card:hover, .project-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  border-left: 4px solid #6c63ff;
+  border-left: 4px solid #4a3aff;
 }
 
 .skills {
@@ -141,8 +144,8 @@ nav {
   display: inline-block;
   margin: 0.75rem 0.25rem;
   padding: 0.5rem 1.1rem;
-  border: 2px solid #6c63ff;
-  color: #6c63ff;
+  border: 2px solid #4a3aff;
+  color: #4a3aff;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
@@ -151,42 +154,42 @@ nav {
 }
 
 .resume-button:hover {
-  background-color: #6c63ff;
+  background-color: #4a3aff;
   color: #fff;
 }
 
 .resume-download-icon {
   font-size: 1.2rem;
-  color: #6c63ff;
+  color: #4a3aff;
   text-decoration: none;
   margin-left: 0.4rem;
   position: relative;
   top: 0.2rem;
-  transition: transform 0.2s;
+  transition: transform 0.2s, color 0.3s ease;
 }
 
 .resume-download-icon:hover {
   transform: translateY(2px);
-  color: #333;
+  color: #222;
 }
 
 /* Footer */
 footer {
   text-align: center;
   padding: 2rem;
-  background: #fafafa;
+  background: #f0f0ff;
   font-size: 0.9rem;
-  color: #888;
+  color: #666;
 }
 
 footer a {
-  color: #6c63ff;
+  color: #4a3aff;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 footer a:hover {
-  color: #333;
+  color: #111;
 }
 
 /* Animations */
