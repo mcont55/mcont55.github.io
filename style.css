@@ -27,17 +27,19 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background: #ffffffcc;
+  background: #ffffffee;
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
 }
 
 .nav-left {
   font-weight: 700;
   font-size: 1.2rem;
+  color: #6c63ff;
 }
 
 .nav-right {
@@ -134,16 +136,17 @@ nav {
   gap: 1rem;
 }
 
-/* Resume Button */
+/* Resume Buttons */
 .resume-button {
   display: inline-block;
-  margin: 0.75rem 0.5rem;
-  padding: 0.6rem 1.2rem;
+  margin: 0.75rem 0.25rem;
+  padding: 0.5rem 1.1rem;
   border: 2px solid #6c63ff;
   color: #6c63ff;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 600;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
 }
 
@@ -152,9 +155,19 @@ nav {
   color: #fff;
 }
 
-.resume-button.download::after {
-  content: " \2193";
-  font-weight: normal;
+.resume-download-icon {
+  font-size: 1.2rem;
+  color: #6c63ff;
+  text-decoration: none;
+  margin-left: 0.4rem;
+  position: relative;
+  top: 0.2rem;
+  transition: transform 0.2s;
+}
+
+.resume-download-icon:hover {
+  transform: translateY(2px);
+  color: #333;
 }
 
 /* Footer */
