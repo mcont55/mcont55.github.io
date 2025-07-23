@@ -10,9 +10,18 @@ const observer = new IntersectionObserver(entries => {
   threshold: 0.1
 });
 
-// Observe each fade-in element
 const sections = document.querySelectorAll('.fade-in');
 sections.forEach(section => {
   observer.observe(section);
 });
 
+// Scroll to top button logic
+const scrollBtn = document.getElementById("scrollToTopBtn");
+if (scrollBtn) {
+  window.addEventListener("scroll", () => {
+    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
