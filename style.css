@@ -22,6 +22,16 @@ section {
   padding: 0 1rem;
 }
 
+/* Distinct Sections */
+.distinct-section {
+  background-color: #e4f8ec;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  margin: 3rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #bde6ca;
+}
+
 /* Navigation */
 nav {
   display: flex;
@@ -110,15 +120,25 @@ nav {
 }
 
 /* Cards */
-.exp-card, .project-card {
+.exp-card {
   background: #fff;
   padding: 1.5rem;
   margin: 1rem 0;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left 0.3s ease, background-color 0.3s ease;
+  border-left: 4px solid #3aa76d;
+}
+
+.project-card {
+  background: #fff;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  transition: background-color 0.3s ease, border-left 0.3s ease;
   border-left: 4px solid transparent;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .project-card:hover {
@@ -131,15 +151,16 @@ nav {
 }
 
 .project-extra {
-  margin-top: 0.5rem;
-  color: #444;
-  line-height: 1.4;
-  transition: all 0.3s ease;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
 }
 
 .project-card.expanded .project-extra {
-  display: block;
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 0.75rem;
 }
 
 .skills {
@@ -258,11 +279,3 @@ footer a:hover {
     margin: 2.5rem auto;
   }
 }
-
-.distinct-section {
-  background-color: #f0fdf4;
-  border-radius: 12px;
-  padding: 2rem 1.5rem;
-  margin-top: 2rem;
-}
-
