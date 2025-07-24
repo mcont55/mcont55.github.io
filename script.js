@@ -3,7 +3,7 @@ const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      observer.unobserve(entry.target); // Animate once
+      observer.unobserve(entry.target);
     }
   });
 }, {
@@ -25,3 +25,10 @@ if (scrollBtn) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
+
+// Project card expand/collapse
+document.querySelectorAll('.project-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('expanded');
+  });
+});
