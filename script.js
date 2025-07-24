@@ -6,14 +6,9 @@ const observer = new IntersectionObserver(entries => {
       observer.unobserve(entry.target);
     }
   });
-}, {
-  threshold: 0.1
-});
+}, { threshold: 0.1 });
 
-const sections = document.querySelectorAll('.fade-in');
-sections.forEach(section => {
-  observer.observe(section);
-});
+document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
 
 // Scroll to top button logic
 const scrollBtn = document.getElementById("scrollToTopBtn");
@@ -26,7 +21,7 @@ if (scrollBtn) {
   });
 }
 
-// Project card expand/collapse
+// Expand/collapse project card content
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('expanded');
