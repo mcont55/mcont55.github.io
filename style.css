@@ -258,3 +258,11 @@ footer a:hover {
     margin: 2.5rem auto;
   }
 }
+
+.distinct-section {
+  background-color: #f0fdf4;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin-top: 2rem;
+}
+
