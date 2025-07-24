@@ -116,14 +116,30 @@ nav {
   margin: 1rem 0;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left 0.3s ease, background-color 0.3s ease;
   border-left: 4px solid transparent;
+  cursor: pointer;
 }
 
-.exp-card:hover, .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+.project-card:hover {
+  background-color: #f1fdf4;
+}
+
+.project-card.expanded {
+  background-color: #e7faed;
   border-left: 4px solid #3aa76d;
+}
+
+.project-extra {
+  margin-top: 0.5rem;
+  color: #444;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+.project-card.expanded .project-extra {
+  display: block;
 }
 
 .skills {
