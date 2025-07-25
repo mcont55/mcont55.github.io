@@ -1,4 +1,4 @@
-// Fade-in animations
+// Fade-in
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -7,10 +7,9 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(sec => observer.observe(sec));
 
-document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
-
-// Scroll to top button
+// Scroll to top
 const scrollBtn = document.getElementById("scrollToTopBtn");
 if (scrollBtn) {
   window.addEventListener("scroll", () => {
@@ -27,7 +26,6 @@ document.querySelectorAll('.project-card').forEach(card => {
   if (link && (!link.getAttribute('href') || link.getAttribute('href') === "#")) {
     link.style.display = "none";
   }
-
   card.addEventListener('click', () => {
     card.classList.toggle('expanded');
   });
