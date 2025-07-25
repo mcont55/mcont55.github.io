@@ -1,3 +1,15 @@
+/* Scroll Progress Bar */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #3aa76d;
+  width: 0%;
+  z-index: 1001;
+  transition: width 0.2s ease;
+}
+
 /* General */
 body {
   font-family: 'Inter', sans-serif;
@@ -7,7 +19,6 @@ body {
   padding: 0;
   line-height: 1.6;
   scroll-behavior: smooth;
-  transition: background 0.3s, color 0.3s;
 }
 
 h1, h2, h3 {
@@ -17,73 +28,19 @@ h1, h2, h3 {
 }
 
 section {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 4rem auto;
   padding: 0 1rem;
 }
 
-/* Distinct Section Wrapper */
+/* Distinct Sections */
 .distinct-section {
   background-color: #e4f8ec;
   border-radius: 12px;
   padding: 2.5rem 2rem;
   margin: 3rem auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 1px solid #bde6ca;
-}
-
-/* Navigation */
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
-}
-
-.nav-left {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #3aa76d;
-}
-
-.nav-right {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-right a {
-  text-decoration: none;
-  color: #333;
-  position: relative;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-right a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  left: 0;
-  bottom: -2px;
-  background-color: #3aa76d;
-  transition: width 0.3s ease;
-}
-
-.nav-right a:hover {
-  color: #3aa76d;
-}
-
-.nav-right a:hover::after {
-  width: 100%;
+  border: 3px solid #3aa76d88;
 }
 
 /* Hero */
@@ -92,31 +49,32 @@ nav {
   padding: 6rem 1rem 3rem;
 }
 
-.profile-pic {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  margin-bottom: 1rem;
-  border: 3px solid #3aa76d44;
-}
-
 .profile-pic.large {
   width: 160px;
   height: 160px;
-}
-
-.tagline {
-  font-size: 1.1rem;
-  color: #444;
-  margin: 0.2rem 0;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 3px solid #3aa76d44;
 }
 
 .tagline.highlight {
   color: #3aa76d;
   font-weight: 600;
   font-size: 1.3rem;
+  min-height: 1.5rem; /* prevents page shift */
+}
+
+.typed-cursor {
+  font-weight: 300;
+  font-size: 1.3rem;
+  color: #3aa76d;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* Experience Cards */
@@ -143,56 +101,56 @@ nav {
   object-fit: contain;
   background: #f0fdf4;
   padding: 0.3rem;
-  border: 1px solid #c7f2d4;
-}
-
-.exp-title {
-  font-size: 0.95rem;
-  color: #555;
-  margin: 0.2rem 0 0;
-}
-
-.exp-list {
-  margin: 0.5rem 0 1rem 1.2rem;
-}
-
-.exp-list li {
-  margin: 0.3rem 0;
 }
 
 /* Skill Tags */
 .exp-tags, .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.5rem;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .exp-tags span, .project-tags span {
-  background: #e3fcec;
-  color: #3aa76d;
+  background: #f6fff8;
+  border: 1px solid #3aa76d33;
+  color: #2b2b2b;
   font-size: 0.8rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  border: 1px solid #b8eac9;
+  font-weight: 500;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+.exp-tags span:hover, .project-tags span:hover {
+  background: #3aa76d;
+  color: #fff;
+  border: 1px solid #3aa76d;
+}
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Project Cards */
 .project-card {
   background: #fff;
   padding: 1.5rem;
-  margin: 1rem 0;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   transition: background-color 0.3s ease, border-left 0.3s ease;
   border-left: 4px solid transparent;
   cursor: pointer;
   overflow: hidden;
-  position: relative;
-}
-
-.project-card:hover {
-  background-color: #f1fdf4;
 }
 
 .project-card.expanded {
@@ -213,68 +171,17 @@ nav {
   margin-top: 0.75rem;
 }
 
-/* Click hint */
-.project-card::after {
-  content: "Click to see more";
-  font-size: 0.75rem;
-  color: #3aa76d;
-  position: absolute;
-  bottom: 10px;
-  right: 12px;
-  opacity: 0.8;
-}
-
-/* Resume Buttons */
-.resume-button {
+.project-link {
   display: inline-block;
-  margin: 0.75rem 0.25rem;
-  padding: 0.5rem 1.1rem;
-  border: 2px solid #3aa76d;
+  margin-top: 0.5rem;
   color: #3aa76d;
-  text-decoration: none;
-  border-radius: 6px;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-
-.resume-button:hover {
-  background-color: #3aa76d;
-  color: #fff;
-}
-
-.resume-download-icon {
-  font-size: 1.2rem;
-  color: #3aa76d;
   text-decoration: none;
-  margin-left: 0.4rem;
-  position: relative;
-  top: 0.2rem;
-  transition: transform 0.2s, color 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-.resume-download-icon:hover {
-  transform: translateY(2px);
-  color: #222;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #e3fcec;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-footer a {
-  color: #3aa76d;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: #111;
+.project-link:hover {
+  color: #2b2b2b;
 }
 
 /* Scroll To Top */
@@ -292,38 +199,5 @@ footer a:hover {
   cursor: pointer;
   display: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: opacity 0.3s ease;
   z-index: 999;
-}
-
-#scrollToTopBtn:hover {
-  opacity: 0.8;
-}
-
-/* Animations */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 600px) {
-  .nav-right {
-    display: none;
-  }
-
-  .hero {
-    padding: 4rem 1rem 2rem;
-  }
-
-  section {
-    margin: 2.5rem auto;
-  }
 }
