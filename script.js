@@ -1,4 +1,16 @@
-// Trigger fade-in animations when elements scroll into view
+// Typed.js animation for tagline
+document.addEventListener("DOMContentLoaded", () => {
+  new Typed('#typed', {
+    strings: ['Data Scientist', 'Visualization Junkie', 'Creative Problem Solver', 'Machine Learning Explorer'],
+    typeSpeed: 50,
+    backSpeed: 30,
+    backDelay: 1800,
+    startDelay: 200,
+    loop: true
+  });
+});
+
+// Fade-in animations
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -10,53 +22,26 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.fade-in').forEach(section => observer.observe(section));
 
-// Scroll to top button logic
+// Scroll to top button
 const scrollBtn = document.getElementById("scrollToTopBtn");
-if (scrollBtn) {
-  window.addEventListener("scroll", () => {
-    scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-  });
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+window.addEventListener("scroll", () => {
+  scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
+});
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
-// Expand/collapse project card content
+// Scroll Progress Bar
+window.addEventListener("scroll", () => {
+  const scrollProgress = document.getElementById("scrollProgress");
+  const totalHeight = document.body.scrollHeight - window.innerHeight;
+  const progress = (window.scrollY / totalHeight) * 100;
+  scrollProgress.style.width = progress + "%";
+});
+
+// Project expand/collapse
 document.querySelectorAll('.project-card').forEach(card => {
   card.addEventListener('click', () => {
     card.classList.toggle('expanded');
   });
 });
-
-
-// Typewriter effect for the tagline
-const typedElement = document.getElementById('typed');
-if (typedElement) {
-  const phrases = ['Data Scientist', 'Visualization Junkie', 'Data Analyst', 'Problem Solver'];
-  let phraseIndex = 0;
-  let charIndex = 0;
-
-  function type() {
-    if (charIndex < phrases[phraseIndex].length) {
-      typedElement.textContent += phrases[phraseIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(type, 100);
-    } else {
-      setTimeout(erase, 2000);
-    }
-  }
-
-  function erase() {
-    if (charIndex > 0) {
-      typedElement.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
-      charIndex--;
-      setTimeout(erase, 50);
-    } else {
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      setTimeout(type, 200);
-    }
-  }
-
-  // start the typing effect
-  type();
-}
