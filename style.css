@@ -16,19 +16,19 @@ h1, h2, h3 {
 }
 
 section {
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 4rem auto;
   padding: 0 1rem;
 }
 
-/* Distinct Sections */
+/* Distinct Section */
 .distinct-section {
   background-color: #e4f8ec;
   border-radius: 12px;
   padding: 2.5rem 2rem;
   margin: 3rem auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 2px solid #3aa76d55;
+  border: 3px solid #3aa76d77;
 }
 
 /* Navigation */
@@ -38,7 +38,6 @@ nav {
   align-items: center;
   padding: 1.5rem 2rem;
   background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -56,18 +55,6 @@ nav {
   list-style: none;
   display: flex;
   gap: 1.5rem;
-}
-
-.nav-right a {
-  text-decoration: none;
-  color: #333;
-  position: relative;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-right a:hover {
-  color: #3aa76d;
 }
 
 /* Hero */
@@ -99,17 +86,47 @@ nav {
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   border-left: 5px solid #3aa76d;
+  text-align: center;
+}
+
+.exp-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.exp-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: #f0fdf4;
+  padding: 0.3rem;
+  border: 1px solid #c7f2d4;
+}
+
+.exp-info h3 {
+  margin: 0;
+}
+
+.exp-title {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.2rem;
 }
 
 /* Skill Tags */
-.exp-tags, .project-tags {
+.skill-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.75rem;
+  justify-content: center;
 }
 
-.exp-tags span, .project-tags span {
+.skill-tags span {
   background: #f6fff8;
   border: 1px solid #3aa76d33;
   color: #2b2b2b;
@@ -117,20 +134,19 @@ nav {
   font-weight: 500;
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
-  transition: background 0.3s ease, color 0.3s ease, border 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.exp-tags span:hover, .project-tags span:hover {
+.skill-tags span:hover {
   background: #3aa76d;
   color: #fff;
-  border: 1px solid #3aa76d;
 }
 
 /* Project Grid */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
 /* Project Cards */
@@ -142,8 +158,8 @@ nav {
   transition: background-color 0.3s ease, border-left 0.3s ease;
   border-left: 4px solid transparent;
   cursor: pointer;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
 .project-card:hover {
@@ -163,63 +179,32 @@ nav {
 }
 
 .project-card.expanded .project-extra {
-  max-height: 200px;
+  max-height: 300px;
   opacity: 1;
   margin-top: 0.75rem;
 }
 
-/* Click Hint */
+/* Elegant Click Hint */
 .click-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 12px;
   font-size: 0.75rem;
   color: #3aa76d;
-  text-align: right;
-  margin-top: 0.5rem;
   opacity: 0.8;
+  font-weight: 500;
 }
 
-/* Resume Buttons */
-.resume-button {
-  border: 2px solid #3aa76d;
+/* Project Links */
+.project-link {
+  display: inline-block;
+  margin-top: 0.5rem;
   color: #3aa76d;
-  padding: 0.5rem 1.1rem;
-  border-radius: 6px;
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
-
-.resume-button:hover {
-  background-color: #3aa76d;
-  color: #fff;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background: #e3fcec;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-footer a {
-  color: #3aa76d;
   text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
 
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  font-size: 20px;
-  background: #3aa76d;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  display: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  z-index: 999;
+.project-link:hover {
+  border-bottom: 1px solid #3aa76d;
 }
