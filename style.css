@@ -28,7 +28,7 @@ section {
   padding: 2.5rem 2rem;
   margin: 3rem auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 3px solid #3aa76d77;
+  border: 3px solid #3aa76d99;
 }
 
 /* Navigation */
@@ -98,8 +98,8 @@ nav {
 }
 
 .exp-logo {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   border-radius: 8px;
   object-fit: contain;
   background: #f0fdf4;
@@ -107,14 +107,9 @@ nav {
   border: 1px solid #c7f2d4;
 }
 
-.exp-info h3 {
-  margin: 0;
-}
-
 .exp-title {
   font-size: 0.95rem;
   color: #555;
-  margin-top: 0.2rem;
 }
 
 /* Skill Tags */
@@ -184,7 +179,7 @@ nav {
   margin-top: 0.75rem;
 }
 
-/* Elegant Click Hint */
+/* Click Hint */
 .click-hint {
   position: absolute;
   bottom: 8px;
