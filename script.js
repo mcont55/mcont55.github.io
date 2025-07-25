@@ -27,3 +27,36 @@ document.querySelectorAll('.project-card').forEach(card => {
     card.classList.toggle('expanded');
   });
 });
+
+
+// Typewriter effect for the tagline
+const typedElement = document.getElementById('typed');
+if (typedElement) {
+  const phrases = ['Data Scientist', 'Visualization Junkie', 'Data Analyst', 'Problem Solver'];
+  let phraseIndex = 0;
+  let charIndex = 0;
+
+  function type() {
+    if (charIndex < phrases[phraseIndex].length) {
+      typedElement.textContent += phrases[phraseIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, 100);
+    } else {
+      setTimeout(erase, 2000);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      typedElement.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, 50);
+    } else {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+      setTimeout(type, 200);
+    }
+  }
+
+  // start the typing effect
+  type();
+}
