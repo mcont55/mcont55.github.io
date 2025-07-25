@@ -24,7 +24,7 @@ if (scrollBtn) {
 // Expand/collapse projects and hide link if none
 document.querySelectorAll('.project-card').forEach(card => {
   const link = card.querySelector('.project-link');
-  if (link && !link.getAttribute('href') || link.getAttribute('href') === "#") {
+  if (link && (!link.getAttribute('href') || link.getAttribute('href') === "#")) {
     link.style.display = "none";
   }
 
