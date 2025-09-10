@@ -33,7 +33,7 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 // Typing effect
 new Typed('#typed', {
-  strings: ['Data Science Enthusiast', 'Visualization Junkie', 'Creative Problem Solver'],
+  strings: ['Machine Learning', 'Automation', 'Analytics'],
   typeSpeed: 50,
   backSpeed: 30,
   backDelay: 1800,
