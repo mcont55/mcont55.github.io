@@ -291,3 +291,45 @@ footer strong a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   z-index: 999;
 }
+
+/* ===== Skills Section Styling ===== */
+#skills {
+  text-align: left;
+  margin-top: 40px;
+}
+
+#skills h2 {
+  margin-bottom: 20px;
+}
+
+#skills .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+#skills .skill-tags strong {
+  font-weight: 600;
+  margin-right: 10px;
+  min-width: 160px; /* keeps category labels aligned */
+  color: #222;
+}
+
+#skills .skill-tags span {
+  background-color: #f2fef8;
+  color: #333;
+  border-radius: 16px;
+  padding: 6px 12px;
+  margin: 4px 6px 4px 0;
+  font-size: 0.9rem;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #3aa76d33;
+}
+
+#skills .skill-tags span:hover {
+  background-color: #3aa76d;
+  color: #fff;
+  transform: scale(1.05);
+}
